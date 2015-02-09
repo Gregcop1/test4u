@@ -1,0 +1,56 @@
+// # config: sizes, colors and fonts
+
+// Max width of the slice ( the max background size exceeding the content size )
+$sliceWidth  : 960px;
+// Used on browser not supporting mediaqueries
+$baseWidth : 720px;
+
+// Max size of the page
+$max        : 720; 
+$maxWidth   : $max * 1px;
+$pagePadding: 30;
+
+// Gutter width for the grid system
+$gutter     : 30px;
+
+// # Colors
+$white          : #FFFFFF;
+$cream          : #d6d6d6;
+$black          : #202020;
+
+$grey            : #424242;
+$grey2           : #888888;
+$grey3           : #dedede;
+
+$brown : #a3959c;
+$blue : #5b9ec9;
+$marine : #62618d;
+$red : #de5d5a;
+$orange : #ed8837;
+$purple : #a833c1;
+
+$outlineBlue    : #aad4ff;
+$errorRed       : #e04831;
+
+// # Fonts
+@import url(http://fonts.googleapis.com/css?family=Inika:400,700);
+@font-face {
+    font-family: 'zocial';
+    src: url('../fonts/zocial-regular-webfont.eot');
+}
+
+@font-face {
+    font-family: 'zocial';
+    src: url('../fonts/zocial-regular-webfont.ttf') format('truetype'),
+         url('../fonts/zocial-regular-webfont.svg#zocialregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+$font : 'Inika', serif;
+$font-icon : 'zocial', Arial, sans-serif;
+
+// # Fonts weight
+$light : 300;
+$regular : 400;
+$medium : 500;
+$bold : 700;

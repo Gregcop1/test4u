@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script type="text/javascript" src="{{asset "js/components/modernizr.js"}}"></script>
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    {{! Styles'n'Scripts }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/main.css"}}" />
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+    <nav class="main">
+        <ul class="mainNav">
+            <li><a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a></li>
+            <li class="tag-bons-plans"><a href="/tag/bons-plans/">Bons plans</a></li>
+            <li class="tag-films"><a href="/tag/films/">Films</a></li>
+            <li class="tag-lectures"><a href="/tag/lectures/">Lectures</a></li>
+            <li class="tag-pro"><a href="/tag/pro/">Pro</a></li>
+            <li class="tag-spectacles"><a href="/tag/spectacles/">Spectacles</a></li>
+        </ul>
+    </nav>
+
+    {{! Everything else gets inserted here }}
+    {{{body}}}
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+    {{! The main JavaScript file for Casper }}
+    <script type="text/javascript" src="{{asset "js/base.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/main.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/components/tagsCloud.js"}}"></script>
+    <script type='text/javascript'>//<![CDATA[
+      document.write("<script async src='//HOST:2369/browser-sync/browser-sync-client.1.5.7.js'><\/script>".replace(/HOST/g, location.hostname).replace(/PORT/g, location.port));
+      //]]></script>
+
+</body>
+</html>

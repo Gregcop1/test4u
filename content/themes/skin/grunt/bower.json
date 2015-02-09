@@ -1,0 +1,22 @@
+{
+  "name": "Devnotes",
+  "description": "Skin for Devnotes themes",
+  "version": "1.0.0",
+  "author": {
+    "name": "Greg"
+  },
+  "contributors": [
+    "Plou <cl.plou@gmail.com> (http://plou.github.io/)",
+    "Gregcop1 <gregcop1@gmail.com> (https://github.com/Gregcop1)"
+  ],
+  "repository": {},
+  "bugs": {},
+  "dependencies": {
+    "modernizr": "latest",
+    "jquery": "~1.10.0",
+    "jquery-ui": "~1.10.4"
+  },
+  "devDependencies": {
+    "nanobar": "~0.2.0"
+  }
+}
