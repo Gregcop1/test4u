@@ -15,16 +15,52 @@ body { background: url(../img/background_page.gif); }
 .nav { @include nav; }
 
 // ### mainNav
-.mainNav { margin: 0; padding: 0;
+.mainNav { margin: 8px 0 0; padding: 0 0 6px; background: url(../img/hr_sousMenu.gif) 50% 100% no-repeat;
   text-align: center; 
-  li { display: inline; } 
-  a { @include inline-block;
-    font-size: 1.15em; font-weight: bold; text-transform: uppercase; text-decoration: none; }
+  li { @include inline-block; margin: 0; padding: 20px 15px; list-style-type: none; vertical-align: middle;
+    font-size: 1.8em; 
+    
+    &:first-child { padding: 0; }
+    &.tag-bons-plans a:hover { color: $brown; }
+    &.tag-films a:hover { color: $blue; }
+    &.tag-lectures a:hover { color: $marine; }
+    &.tag-pro a:hover { color: $red; }
+    &.tag-restos a:hover { color: $orange; }
+    &.tag-spectacles a:hover { color: $purple; }
+  } 
+  h1 { display: inline; margin: 0; padding: 0; }
+  a { font-size: 1.15em; font-weight: bold; color: $grey; text-transform: uppercase; text-decoration: none; }
 }
 
 
 
 // ## MainContent
+main.content { margin: 40px auto; padding: 40px $gutter; width: $sliceWidth; max-width: 100%; background: $white; border-top: 2px dashed $grey3; border-bottom: 2px dashed $grey3;
+  h2 { margin: 0;
+    font-size: 3em; color: $black; text-transform: uppercase; }
+  .test4u { display: block; 
+    font-size: 0.65em; line-height: 1em;
+    
+    .tag-bons-plans & { color: $brown; }
+    .tag-films & { color: $blue; }
+    .tag-lectures & { color: $marine; }
+    .tag-pro & { color: $red; }
+    .tag-restos & { color: $orange; }
+    .tag-spectacles & { color: $purple; }
+  }
+  .post-meta { margin: 0;
+    font-size: 2.4em; font-weight: $bold; color: $cream;
+    a { color: $cream; } }
+
+  .post-content {
+    img, iframe { margin: 40px -6.9444444%; width: 113.88889%; height: auto; }
+    iframe { height: 460px;  }
+  }
+
+  .post-footer { margin: 0 -50px -50px; padding: 50px; background-color: $grey2; border-top: 2px dashed $white; border-bottom: 2px dashed $grey3; 
+    color: $white;
+  }
+}
 
 // ### Article
 #progress { position: fixed; top: -18px; left: 0; right: 0; transition: 300ms top linear; transition-delay: 2000ms;
