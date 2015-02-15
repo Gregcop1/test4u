@@ -24,10 +24,11 @@
     {{ghost_head}}
 </head>
 <body class="{{body_class}}">
-    <header>
+    <div id="progress" class="progress"></div>
+    <header class="header">
         <nav class="main">
             <ul class="mainNav">
-                <li><h1><a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a></h1></li>
+                <li><h1><a class="blog-logo" href="{{@blog.url}}" target="_self"><img src="{{@blog.logo}}" alt="{{@blog.title}}" class="logo" /></a></h1></li>
                 <li class="tag-bons-plans"><a href="/tag/bons-plans/">Bons plans</a></li>
                 <li class="tag-films"><a href="/tag/films/">Films</a></li>
                 <li class="tag-lectures"><a href="/tag/lectures/">Lectures</a></li>

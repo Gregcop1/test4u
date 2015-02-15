@@ -205,6 +205,23 @@ body { background: url(../img/background_page.gif); }
 .tag-spectacles a { color: #a833c1; }
 
 /* line 15, src/modules.scss */
+.progress { position: fixed; top: 0; left: 0; right: 0; height: 8px; background: #d1cece; z-index: 2; transition: 300ms top linear; }
+/* line 16, src/modules.scss */
+.tag-bons-plans .progress { background-color: #a3959c; }
+/* line 17, src/modules.scss */
+.tag-films .progress { background-color: #5b9ec9; }
+/* line 18, src/modules.scss */
+.tag-lectures .progress { background-color: #62618d; }
+/* line 19, src/modules.scss */
+.tag-pro .progress { background-color: #de5d5a; }
+/* line 20, src/modules.scss */
+.tag-restos .progress { background-color: #ed8837; }
+/* line 21, src/modules.scss */
+.tag-spectacles .progress { background-color: #a833c1; }
+/* line 23, src/modules.scss */
+.progress #progressBar div { background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.3) 0%, rgba(255, 255, 255, 0) 100%) !important; /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.3)), color-stop(100%, rgba(255, 255, 255, 0))) !important; /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.3) 0%, rgba(255, 255, 255, 0) 100%) !important; /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, rgba(0, 0, 0, 0.3) 0%, rgba(255, 255, 255, 0) 100%) !important; /* Opera 11.10+ */ background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.3) 0%, rgba(255, 255, 255, 0) 100%) !important; /* IE10+ */ background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(255, 255, 255, 0) 100%) !important; /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#00ffffff',GradientType=0 ) !important; /* IE6-9 */ }
+
+/* line 36, src/modules.scss */
 .nav { display: block; margin: 0; padding: 0; }
 /* line 18, src/ie.scss */
 .nav li { display: inline; zoom: 1; margin: 5px; padding: 0; }
@@ -213,117 +230,183 @@ body { background: url(../img/background_page.gif); }
 /* line 24, src/ie.scss */
 .nav .second { position: absolute; display: none; }
 
-/* line 18, src/modules.scss */
-.mainNav { margin: 8px 0 0; padding: 0 0 6px; background: url(../img/hr_sousMenu.gif) 50% 100% no-repeat; text-align: center; }
-/* line 20, src/modules.scss */
-.mainNav li { display: inline; zoom: 1; margin: 0; padding: 20px 15px; list-style-type: none; vertical-align: middle; font-size: 1.8em; }
-/* line 23, src/modules.scss */
-.mainNav li:first-child { padding: 0; }
-/* line 24, src/modules.scss */
+/* line 40, src/modules.scss */
+.header { background: url(../img/background_page.gif); }
+
+/* line 41, src/modules.scss */
+.mainNav { margin: 8px 0 0; padding: 0 0 6px; background: url(../img/hr_sousMenu.gif) 50% 97% no-repeat; text-align: center; }
+/* line 43, src/modules.scss */
+.mainNav .logo { height: auto; transition: width 200ms linear, height 200ms linear; }
+/* line 44, src/modules.scss */
+.mainNav li { display: inline; zoom: 1; margin: 0; padding: 20px 15px; list-style-type: none; vertical-align: top; transition: padding 200ms linear, font-size 200ms linear; font-size: 1.8em; }
+/* line 47, src/modules.scss */
+.mainNav li:first-child { padding: 3px 15px !important; }
+/* line 48, src/modules.scss */
 .mainNav li.tag-bons-plans a:hover { color: #a3959c; }
-/* line 25, src/modules.scss */
+/* line 49, src/modules.scss */
 .mainNav li.tag-films a:hover { color: #5b9ec9; }
-/* line 26, src/modules.scss */
+/* line 50, src/modules.scss */
 .mainNav li.tag-lectures a:hover { color: #62618d; }
-/* line 27, src/modules.scss */
+/* line 51, src/modules.scss */
 .mainNav li.tag-pro a:hover { color: #de5d5a; }
-/* line 28, src/modules.scss */
+/* line 52, src/modules.scss */
 .mainNav li.tag-restos a:hover { color: #ed8837; }
-/* line 29, src/modules.scss */
+/* line 53, src/modules.scss */
 .mainNav li.tag-spectacles a:hover { color: #a833c1; }
-/* line 31, src/modules.scss */
+/* line 54, src/modules.scss */
+body.tag-bons-plans .mainNav li.tag-bons-plans { background: #a3959c url(../img/activ_shadow.png) 0 100% repeat-x; }
+/* line 55, src/modules.scss */
+body.tag-bons-plans .mainNav li.tag-bons-plans a { color: #f9f9f9; }
+/* line 56, src/modules.scss */
+body.tag-films .mainNav li.tag-films { background: #5b9ec9 url(../img/activ_shadow.png) 0 100% repeat-x; }
+/* line 57, src/modules.scss */
+body.tag-films .mainNav li.tag-films a { color: #f9f9f9; }
+/* line 58, src/modules.scss */
+body.tag-lectures .mainNav li.tag-lectures { background: #62618d url(../img/activ_shadow.png) 0 100% repeat-x; }
+/* line 59, src/modules.scss */
+body.tag-lectures .mainNav li.tag-lectures a { color: #f9f9f9; }
+/* line 60, src/modules.scss */
+body.tag-pro .mainNav li.tag-pro { background: #de5d5a url(../img/activ_shadow.png) 0 100% repeat-x; }
+/* line 61, src/modules.scss */
+body.tag-pro .mainNav li.tag-pro a { color: #f9f9f9; }
+/* line 62, src/modules.scss */
+body.tag-restos .mainNav li.tag-restos { background: #ed8837 url(../img/activ_shadow.png) 0 100% repeat-x; }
+/* line 63, src/modules.scss */
+body.tag-restos .mainNav li.tag-restos a { color: #f9f9f9; }
+/* line 64, src/modules.scss */
+body.tag-spectacles .mainNav li.tag-spectacles { background: #a833c1 url(../img/activ_shadow.png) 0 100% repeat-x; }
+/* line 65, src/modules.scss */
+body.tag-spectacles .mainNav li.tag-spectacles a { color: #f9f9f9; }
+/* line 69, src/modules.scss */
 .mainNav h1, .mainNav .h1-like { display: inline; margin: 0; padding: 0; }
-/* line 32, src/modules.scss */
+/* line 70, src/modules.scss */
 .mainNav a { font-size: 1.15em; font-weight: bold; color: #676775; text-transform: uppercase; text-decoration: none; }
 
-/* line 38, src/modules.scss */
-main.content { margin: 40px auto; padding: 40px 50px; width: 720px; max-width: 100%; background: #f9f9f9; border-top: 2px dashed #e9e9e9; border-bottom: 2px dashed #e9e9e9; }
-/* line 39, src/modules.scss */
-main.content h2, main.content .h2-like { margin: 0; font-size: 3em; color: #1c1917; text-transform: uppercase; }
-/* line 41, src/modules.scss */
-main.content .test4u { display: block; font-size: 0.65em; line-height: 1em; }
-/* line 44, src/modules.scss */
-.tag-bons-plans main.content .test4u { color: #a3959c; }
-/* line 45, src/modules.scss */
-.tag-films main.content .test4u { color: #5b9ec9; }
-/* line 46, src/modules.scss */
-.tag-lectures main.content .test4u { color: #62618d; }
-/* line 47, src/modules.scss */
-.tag-pro main.content .test4u { color: #de5d5a; }
-/* line 48, src/modules.scss */
-.tag-restos main.content .test4u { color: #ed8837; }
-/* line 49, src/modules.scss */
-.tag-spectacles main.content .test4u { color: #a833c1; }
-/* line 51, src/modules.scss */
-main.content .post-meta { margin: 0; font-size: 2.4em; font-weight: 700; color: #d1cece; }
-/* line 53, src/modules.scss */
-main.content .post-meta a { color: #d1cece; }
-/* line 56, src/modules.scss */
-main.content .post-content img, main.content .post-content iframe { margin: 40px -6.9444444%; width: 113.88889%; height: auto; }
-/* line 57, src/modules.scss */
-main.content .post-content iframe { height: 460px; }
-/* line 60, src/modules.scss */
-main.content .post-footer { margin: 0 -50px -50px; padding: 50px; background-color: #4c4c4c; border-top: 2px dashed #f9f9f9; border-bottom: 2px dashed #e9e9e9; color: #f9f9f9; }
-
-/* line 66, src/modules.scss */
-#progress { position: fixed; top: -18px; left: 0; right: 0; transition: 300ms top linear; transition-delay: 2000ms; }
-/* line 67, src/modules.scss */
-#progress.active { top: 0; transition-delay: 0; }
-/* line 69, src/modules.scss */
-#progress p { position: absolute; top: 3px; left: 10px; margin: 0; z-index: 20; font-size: 1.2em; line-height: 1; font-weight: 700; color: #f9f9f9; }
-
 /* line 72, src/modules.scss */
-#progressBar { height: 22px !important; z-index: 10 !important; background: #e2e0e1; background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2UyZTBlMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2UxZTFlMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkOGQ4ZDgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); background: -moz-linear-gradient(top, #e2e0e1 0%, #e1e1e1 50%, #d8d8d8 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e2e0e1), color-stop(50%, #e1e1e1), color-stop(100%, #d8d8d8)); background: -webkit-linear-gradient(top, #e2e0e1 0%, #e1e1e1 50%, #d8d8d8 100%); background: -o-linear-gradient(top, #e2e0e1 0%, #e1e1e1 50%, #d8d8d8 100%); background: -ms-linear-gradient(top, #e2e0e1 0%, #e1e1e1 50%, #d8d8d8 100%); background: linear-gradient(to bottom, #e2e0e1 0%, #e1e1e1 50%, #d8d8d8 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e0e1', endColorstr='#d8d8d8',GradientType=0 ); }
-/* line 82, src/modules.scss */
-#progressBar > div { background: #a7c73e; background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2E3YzczZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2E2YzgzZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM5ZmJkM2IiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); background: -moz-linear-gradient(top, #a7c73e 0%, #a6c83e 50%, #9fbd3b 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a7c73e), color-stop(50%, #a6c83e), color-stop(100%, #9fbd3b)); background: -webkit-linear-gradient(top, #a7c73e 0%, #a6c83e 50%, #9fbd3b 100%); background: -o-linear-gradient(top, #a7c73e 0%, #a6c83e 50%, #9fbd3b 100%); background: -ms-linear-gradient(top, #a7c73e 0%, #a6c83e 50%, #9fbd3b 100%); background: linear-gradient(to bottom, #a7c73e 0%, #a6c83e 50%, #9fbd3b 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7c73e', endColorstr='#9fbd3b',GradientType=0 ); }
+.fixedNav .header { position: fixed; top: 0; left: 0; right: 0; }
+/* line 73, src/modules.scss */
+.fixedNav .header .mainNav { background-repeat: repeat-x; }
+/* line 74, src/modules.scss */
+.fixedNav .header li { padding: 9px 14px; font-size: 1.4em; }
+/* line 75, src/modules.scss */
+.fixedNav .header .logo { height: 30px; }
 
-/* line 94, src/modules.scss */
-.asideBar { position: fixed; top: 121px; right: 0; }
+/* line 80, src/modules.scss */
+.fixedNav main.content { margin-top: 122px; }
+
+/* line 81, src/modules.scss */
+.post { margin: 40px auto; padding: 40px 50px; width: 720px; max-width: 100%; background: white; border-top: 2px dashed #e9e9e9; border-bottom: 2px dashed #e9e9e9; }
+/* line 82, src/modules.scss */
+.post h2, .post .h2-like { margin: 0; font-size: 3em; color: #1c1917; text-transform: uppercase; }
+/* line 84, src/modules.scss */
+.post p, .post li, .post td, .post blockquote { text-align: justify; }
+/* line 85, src/modules.scss */
+.post .test4u { display: block; font-size: 0.65em; line-height: 1em; }
+/* line 88, src/modules.scss */
+.tag-bons-plans .post .test4u { color: #a3959c; }
+/* line 89, src/modules.scss */
+.tag-films .post .test4u { color: #5b9ec9; }
+/* line 90, src/modules.scss */
+.tag-lectures .post .test4u { color: #62618d; }
+/* line 91, src/modules.scss */
+.tag-pro .post .test4u { color: #de5d5a; }
+/* line 92, src/modules.scss */
+.tag-restos .post .test4u { color: #ed8837; }
+/* line 93, src/modules.scss */
+.tag-spectacles .post .test4u { color: #a833c1; }
 /* line 95, src/modules.scss */
-.asideBar > ul, .asideBar > ul > li { display: inline; margin: 0; padding: 0; }
-/* line 96, src/modules.scss */
-.asideBar > ul > li { position: relative; font-size: 2em; line-height: 2em; }
+.post .post-meta { margin: 0; font-size: 2.4em; line-height: 1em; font-weight: 700; color: #d1cece; }
 /* line 97, src/modules.scss */
-.asideBar > ul > li:hover .item { opacity: .9; }
-/* line 99, src/modules.scss */
-.asideBar .tableOfContents:hover .item, .asideBar .tagsCloud:hover .item { opacity: .9; border-color: rgba(103, 103, 117, 0.9); }
+.post .post-meta .author a { color: #d1cece; }
+/* line 100, src/modules.scss */
+.post .post-content img, .post .post-content iframe { margin: 40px -6.9444444%; width: 113.88889%; height: auto; }
 /* line 101, src/modules.scss */
-.asideBar .item { position: relative; display: block; width: 50px; height: 50px; border-left: 1px solid #f9f9f9; z-index: 10; transition: 500ms opacity linear; text-align: center; }
-/* line 104, src/modules.scss */
-.asideBar .panel { position: absolute; top: -50px; right: -500px; padding: 20px; min-width: 300px; max-width: 350px; background-color: #676775; opacity: .98; z-index: 9; transition: 500ms right ease; color: #f9f9f9; }
+.post .post-content iframe { height: 460px; }
+/* line 105, src/modules.scss */
+.tag-bons-plans .post a { color: #a3959c; }
+/* line 106, src/modules.scss */
+.tag-films .post a { color: #5b9ec9; }
 /* line 107, src/modules.scss */
-.asideBar .panel .header { margin: 0; padding: 0 0 10px; border-bottom: 1px solid #4c4c4c; font-size: .9em; line-height: 1.2em; font-weight: 700; }
+.tag-lectures .post a { color: #62618d; }
+/* line 108, src/modules.scss */
+.tag-pro .post a { color: #de5d5a; }
 /* line 109, src/modules.scss */
-.asideBar .panel ul { margin: 10px 0 0; padding: 0; }
+.tag-restos .post a { color: #ed8837; }
 /* line 110, src/modules.scss */
-.asideBar .panel li { margin: 5px 0; padding: 0; }
-/* line 111, src/modules.scss */
-.asideBar .panel li { display: block; white-space: nowrap; font-size: .8em; }
-/* line 113, src/modules.scss */
-.asideBar .panel a { color: #f9f9f9; text-decoration: none; }
+.tag-spectacles .post a { color: #a833c1; }
+/* line 112, src/modules.scss */
+.post .tags { font-size: 0.6em; }
 /* line 114, src/modules.scss */
-.asideBar .panel a:hover { text-decoration: underline; }
-/* line 115, src/modules.scss */
-.asideBar .panel .lvl-2 { padding-left: 10px; }
-/* line 116, src/modules.scss */
-.asideBar .panel .lvl-3 { padding-left: 20px; }
-/* line 117, src/modules.scss */
-.asideBar .panel .lvl-4 { padding-left: 30px; }
-/* line 118, src/modules.scss */
-.asideBar .panel .lvl-5 { padding-left: 40px; }
-/* line 119, src/modules.scss */
-.asideBar .panel .lvl-6 { padding-left: 50px; }
+.post .post-footer { margin: 0 -50px -50px; padding: 50px; background-color: #4c4c4c; border-top: 2px dashed #f9f9f9; border-bottom: 2px dashed #e9e9e9; color: #f9f9f9; }
+
 /* line 121, src/modules.scss */
-.asideBar > ul > li:hover .panel { right: 0px; }
+.home-template .post, .tag-template .post, .archive-template .post, .author-template .post { padding: 20px 25px; }
+/* line 122, src/modules.scss */
+.home-template .cover, .tag-template .cover, .archive-template .cover, .author-template .cover { display: inline; zoom: 1; margin-right: 25px; vertical-align: middle; }
+/* line 123, src/modules.scss */
+.home-template .post-content, .tag-template .post-content, .archive-template .post-content, .author-template .post-content { display: inline; zoom: 1; width: 505px; vertical-align: middle; }
 /* line 124, src/modules.scss */
-.asideBar .tagsCloud .panel .list { font-size: 0.7em; }
-/* line 125, src/modules.scss */
-.asideBar .tagsCloud .panel .weight-light { font-weight: 300; }
+.home-template .post-content p, .tag-template .post-content p, .archive-template .post-content p, .author-template .post-content p { margin: 5px 0; font-size: 1.6em; }
 /* line 126, src/modules.scss */
-.asideBar .tagsCloud .panel .weight-regular { font-size: 1.1em; font-weight: 400; }
+.home-template .post-content .tags, .tag-template .post-content .tags, .archive-template .post-content .tags, .author-template .post-content .tags { font-size: .7em; }
 /* line 127, src/modules.scss */
+.home-template .post-content p:last-child, .tag-template .post-content p:last-child, .archive-template .post-content p:last-child, .author-template .post-content p:last-child { margin-bottom: 0; }
+
+/* line 131, src/modules.scss */
+.tag-head { margin: 40px auto; padding: 0 25px; width: 720px; max-width: 100%; background: white; border-top: 2px dashed #e9e9e9; border-bottom: 2px dashed #e9e9e9; text-align: center; }
+/* line 133, src/modules.scss */
+.tag-head h2, .tag-head .h2-like { margin: 15px 0; }
+
+/* line 134, src/modules.scss */
+.pagination { margin: 40px auto; padding: 15px 25px; width: 720px; max-width: 100%; background: white; border-top: 2px dashed #e9e9e9; border-bottom: 2px dashed #e9e9e9; font-size: 1.6em; text-align: center; }
+
+/* line 139, src/modules.scss */
+.asideBar { position: fixed; top: 121px; right: 0; }
+/* line 140, src/modules.scss */
+.asideBar > ul, .asideBar > ul > li { display: inline; margin: 0; padding: 0; }
+/* line 141, src/modules.scss */
+.asideBar > ul > li { position: relative; font-size: 2em; line-height: 2em; }
+/* line 142, src/modules.scss */
+.asideBar > ul > li:hover .item { opacity: .9; }
+/* line 144, src/modules.scss */
+.asideBar .tableOfContents:hover .item, .asideBar .tagsCloud:hover .item { opacity: .9; border-color: rgba(103, 103, 117, 0.9); }
+/* line 146, src/modules.scss */
+.asideBar .item { position: relative; display: block; width: 50px; height: 50px; border-left: 1px solid #f9f9f9; z-index: 10; transition: 500ms opacity linear; text-align: center; }
+/* line 149, src/modules.scss */
+.asideBar .panel { position: absolute; top: -50px; right: -500px; padding: 20px; min-width: 300px; max-width: 350px; background-color: #676775; opacity: .98; z-index: 9; transition: 500ms right ease; color: #f9f9f9; }
+/* line 152, src/modules.scss */
+.asideBar .panel .header { margin: 0; padding: 0 0 10px; border-bottom: 1px solid #4c4c4c; font-size: .9em; line-height: 1.2em; font-weight: 700; }
+/* line 154, src/modules.scss */
+.asideBar .panel ul { margin: 10px 0 0; padding: 0; }
+/* line 155, src/modules.scss */
+.asideBar .panel li { margin: 5px 0; padding: 0; }
+/* line 156, src/modules.scss */
+.asideBar .panel li { display: block; white-space: nowrap; font-size: .8em; }
+/* line 158, src/modules.scss */
+.asideBar .panel a { color: #f9f9f9; text-decoration: none; }
+/* line 159, src/modules.scss */
+.asideBar .panel a:hover { text-decoration: underline; }
+/* line 160, src/modules.scss */
+.asideBar .panel .lvl-2 { padding-left: 10px; }
+/* line 161, src/modules.scss */
+.asideBar .panel .lvl-3 { padding-left: 20px; }
+/* line 162, src/modules.scss */
+.asideBar .panel .lvl-4 { padding-left: 30px; }
+/* line 163, src/modules.scss */
+.asideBar .panel .lvl-5 { padding-left: 40px; }
+/* line 164, src/modules.scss */
+.asideBar .panel .lvl-6 { padding-left: 50px; }
+/* line 166, src/modules.scss */
+.asideBar > ul > li:hover .panel { right: 0px; }
+/* line 169, src/modules.scss */
+.asideBar .tagsCloud .panel .list { font-size: 0.7em; }
+/* line 170, src/modules.scss */
+.asideBar .tagsCloud .panel .weight-light { font-weight: 300; }
+/* line 171, src/modules.scss */
+.asideBar .tagsCloud .panel .weight-regular { font-size: 1.1em; font-weight: 400; }
+/* line 172, src/modules.scss */
 .asideBar .tagsCloud .panel .weight-medium { font-size: 1.2em; font-weight: 500; }
-/* line 128, src/modules.scss */
+/* line 173, src/modules.scss */
 .asideBar .tagsCloud .panel .weight-bold { font-size: 1.25em; font-weight: 700; }
 
 /*# sourceMappingURL=ie.css.map */

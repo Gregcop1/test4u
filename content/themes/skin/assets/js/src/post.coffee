@@ -6,27 +6,15 @@ Nanobar.prototype.go = (p) ->
 
 $ ->
 
-  $.initAverageTime = ()->
-    words =  $('.post').text().replace(/\r?\n|\r/g, ' ').split(' ').filter((str) -> str != '')
-    $('#progress').append($('<p/>').html('Temps de lecture estimé : ' + Math.round(words.length / 200)+'min'))
-    # var StrippedString = OriginalString;
-
-    return @
-
   $.initProgressBar = ()->
     progress = new Nanobar({
       id: 'progressBar'
       target: $('#progress').get(0)
     })
-    $('#progress').removeClass 'active'
-    $('#progress').on 'mouseenter', (e)-> 
-      $(e.target).closest('#progress').addClass('active')
-    $('#progress').on 'mouseleave', (e)-> 
-      $(e.target).closest('#progress').removeClass('active')
-
+    
     $(window).on('scroll', ()->
       currentScroll = $('body').scrollTop()
-      maxS = $(document).height() - $(window).height()
+      maxS = $('.post-content').height() - ($(window).height()/2)
       progress.go(Math.ceil(currentScroll * 100 / maxS))
     )
 
@@ -34,5 +22,4 @@ $ ->
 
   $(window).ready ->
     if $('body').hasClass('post-template')
-      $.initAverageTime()
       $.initProgressBar()

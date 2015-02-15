@@ -28,7 +28,7 @@ h5 { margin: 20px 0; }
 .introduction { @extend .sliceWithMargin; }
 p, p.bodytext, h6, .h6-like{ margin: 15px 0; }
 td p, td p.bodytext{ margin: 0; }
-ul{ @extend .sliceWithMargin;
+ul{ @extend .sliceWithMargin; margin: 15px 0;
   li{ margin: 5px 0; }
 }
 

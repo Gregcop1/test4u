@@ -1,8 +1,18 @@
 (function() {
   $(function() {
+    $.initFixNav = function() {
+      window.addEventListener('scroll', function(e) {
+        if (window.scrollY) {
+          return $('body').addClass('fixedNav');
+        } else {
+          return $('body').removeClass('fixedNav');
+        }
+      });
+      return this;
+    };
     $.initTargetBlank = function() {
       $('a[href^="http"]').each(function() {
-        if (!$(this).attr('href').match(/http:\/\/devnotes/)) {
+        if (!$(this).attr('href').match(/http:\/\/test4u/)) {
           return $(this).attr('target', '_blank');
         }
       });
@@ -32,7 +42,6 @@
     };
     $.initSmoothScrollOnAnchor = function() {
       $('a[href^=#]').on('click', function(e) {
-        console.log($(e.target).attr('href'));
         e.preventDefault();
         return $('html,body').animate({
           scrollTop: $($(e.target).attr('href')).offset().top
@@ -41,6 +50,7 @@
       return this;
     };
     return $(window).ready(function() {
+      $.initFixNav();
       $.initTargetBlank();
       $.initFootNotes();
       $.initSmoothScrollOnAnchor();

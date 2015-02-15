@@ -2,9 +2,18 @@
 
 $ ->
 
+  $.initFixNav = ()->
+    window.addEventListener('scroll', (e)->
+      if window.scrollY
+        $('body').addClass('fixedNav')
+      else
+        $('body').removeClass('fixedNav')
+    )
+    return @
+
   $.initTargetBlank = ()->
     $('a[href^="http"]').each(->
-      if !$(this).attr('href').match(/http:\/\/devnotes/)
+      if !$(this).attr('href').match(/http:\/\/test4u/)
         $(this).attr('target', '_blank')
     )
     return @
@@ -34,7 +43,6 @@ $ ->
 
   $.initSmoothScrollOnAnchor = ()->
     $('a[href^=#]').on('click', (e)->     
-      console.log $(e.target).attr( 'href')
       e.preventDefault()
       $('html,body').animate({scrollTop:$( $(e.target).attr( 'href') ).offset().top}, 500)
     )
@@ -42,6 +50,7 @@ $ ->
     return @
 
   $(window).ready ->
+    $.initFixNav()
     $.initTargetBlank()
     $.initFootNotes()
     $.initSmoothScrollOnAnchor()

@@ -6,8 +6,6 @@
 {{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
 
-<div id="progress" class="active"></div>
-
 <main class="content" role="main">
 
     <article class="{{post_class}}">
@@ -19,10 +17,10 @@
 
             <p class="post-meta">
                 <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> 
-
                 {{#author}}
-                    - Par <a href="{{url}}">{{name}}</a>
+                    &nbsp;<span class="author">- Par <a href="{{url}}">{{name}}</a></span>
                 {{/author}}
+                &nbsp;<span class="tags">- {{tags}}</span>
             </p>
         </header>
 
@@ -54,3 +52,7 @@
 </main>
 
 {{/post}}
+
+{{ghost_foot}}
+<script type="text/javascript" src="{{asset "js/components/nanobar.min.js"}}"></script>
+<script type="text/javascript" src="{{asset "js/post.js"}}"></script>
