@@ -99,6 +99,10 @@ body { background: url(../img/background_page.gif); }
   .post-content {
     img, iframe { margin: 40px -6.9444444%; width: 113.88889%; height: auto; }
     iframe { height: 460px;  }
+    .gallery { margin: 40px -6.9444444%; text-align: center; }
+    .gallery img { margin: 0; width: auto; }
+    .gallery-item { @include inline-block; margin: -3px 0 0 -1px; width: 19.928%; height: 164px; background-repeat: no-repeat; background-position: 50% 50%; background-size: cover; opacity: .8; transition: opacity 300ms ease-in-out; border: 1px solid white; }
+    .gallery-item:hover { opacity: 1; }
   }
 
   a {

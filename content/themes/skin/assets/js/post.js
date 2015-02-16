@@ -7,6 +7,20 @@
   };
 
   $(function() {
+    $.initGallery = function() {
+      var $a, $imgs;
+      $imgs = [];
+      $a = $('<a/>').addClass('gallery-item');
+      $('.gallery img').each(function() {
+        return $imgs.push($a.clone().attr('href', $(this).attr('src')).css('backgroundImage', 'url(' + $(this).attr('src') + ')'));
+      });
+      $('.gallery').empty();
+      $imgs.forEach(function(item) {
+        return $('.gallery').append(item);
+      });
+      jQuery('.gallery-item').fancybox();
+      return this;
+    };
     $.initProgressBar = function() {
       var progress;
       progress = new Nanobar({
@@ -21,8 +35,9 @@
       });
       return this;
     };
-    return $(window).ready(function() {
+    return $(window).on('ready', function() {
       if ($('body').hasClass('post-template')) {
+        $.initGallery();
         return $.initProgressBar();
       }
     });

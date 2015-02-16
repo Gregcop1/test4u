@@ -54,8 +54,6 @@ $ ->
     $.initTargetBlank()
     $.initFootNotes()
     $.initSmoothScrollOnAnchor()
-    if nightMode
-      nightMode.bind()
 
     # Handle src update on hover event
     $(".no-touch img.hover").hoverSrc()

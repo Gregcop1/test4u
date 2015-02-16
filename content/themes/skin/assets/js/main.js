@@ -54,9 +54,6 @@
       $.initTargetBlank();
       $.initFootNotes();
       $.initSmoothScrollOnAnchor();
-      if (nightMode) {
-        nightMode.bind();
-      }
       $(".no-touch img.hover").hoverSrc();
       if (!Modernizr.input.placeholder) {
         return $("input").each(function() {

@@ -6,6 +6,24 @@ Nanobar.prototype.go = (p) ->
 
 $ ->
 
+  $.initGallery = ->
+    $imgs = []
+    $a = $('<a/>').addClass('gallery-item')
+    $('.gallery img').each(->
+      $imgs.push($a.clone()
+        .attr('href', $(this).attr('src'))  
+        .css('backgroundImage', 'url('+$(this).attr('src')+')'))  
+    )
+
+    $('.gallery').empty()
+    $imgs.forEach((item)->
+      $('.gallery').append(item)
+      # console.log item
+      # item.fancybox()
+    )
+    jQuery('.gallery-item').fancybox()
+    return @
+
   $.initProgressBar = ()->
     progress = new Nanobar({
       id: 'progressBar'
@@ -20,6 +38,7 @@ $ ->
 
     return @
 
-  $(window).ready ->
+  $(window).on 'ready', ->
     if $('body').hasClass('post-template')
+      $.initGallery()
       $.initProgressBar()
