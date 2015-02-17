@@ -13,9 +13,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <script type="text/javascript" src="{{asset "js/components/modernizr.js"}}"></script>
+  <script type="text/javascript" src="{{asset "js/components/prism.js"}}"></script>
 
     <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
 
+  {{! Styles'n'Scripts }}
+  <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/jquery.fancybox.css"}}" />
@@ -34,6 +37,7 @@
                 <li class="tag-films"><a href="/tag/films/">Films</a></li>
                 <li class="tag-lectures"><a href="/tag/lectures/">Lectures</a></li>
                 <li class="tag-pro"><a href="/tag/pro/">Pro</a></li>
+                <li class="tag-restos"><a href="tag-restos">Restos</a></li>
                 <li class="tag-spectacles"><a href="/tag/spectacles/">Spectacles</a></li>
             </ul>
         </nav>
@@ -41,9 +45,6 @@
 
     {{! Everything else gets inserted here }}
     {{{body}}}
-
-    {{! Ghost outputs important scripts and data with this tag }}
-    {{ghost_foot}}
 
     {{! The main JavaScript file for Casper }}
     <script type="text/javascript" src="{{asset "js/base.js"}}"></script>

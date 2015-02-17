@@ -34,7 +34,7 @@ ul{ @extend .sliceWithMargin; margin: 15px 0;
 
 // ## Default Font size
 p, li, td, th, textarea, caption, pre, blockquote, label, input, select, textarea { font-size: 1.7em; line-height: 1.6em; }
-li li, li p, td p, th p, li h1, li .h1-like, li h2, li .h2-like, li h3, li .h3-like, li h4, li .h4-like, li h5, li .h5-like, li h6, li .h6-like, button { font-size: 100%; }
+li li, li p, td p, th p, li h1, li .h1-like, li h2, li .h2-like, li h3, li .h3-like, li h4, li .h4-like, li h5, li .h5-like, li h6, li .h6-like, button, blockquote { font-size: 100%; }
 input, select, textarea { font-family: $font; }
 h1, .h1-like , h2, .h2-like , h3, .h3-like , h4, .h4-like, h5, .h5-like { line-height: 1em; }
 h1, .h1-like { font-size: 3.5em; }

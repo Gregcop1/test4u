@@ -8,17 +8,27 @@
 
   $(function() {
     $.initGallery = function() {
-      var $a, $imgs;
+      var $a, $imgs, count, wClass;
       $imgs = [];
       $a = $('<a/>').addClass('gallery-item');
+      count = $('.gallery img').length;
+      wClass = 'w-4';
+      if (count % 3 === 0) {
+        wClass = 'w-3';
+      } else if (count % 5 === 0) {
+        wClass = 'w-5';
+      }
+      $a.addClass(wClass);
       $('.gallery img').each(function() {
-        return $imgs.push($a.clone().attr('href', $(this).attr('src')).css('backgroundImage', 'url(' + $(this).attr('src') + ')'));
+        return $imgs.push($a.clone().attr('href', $(this).attr('src').trim()).attr('title', $(this).attr('alt').trim()).attr('rel', 'gallery').css('backgroundImage', 'url(' + $(this).attr('src') + ')'));
       });
       $('.gallery').empty();
       $imgs.forEach(function(item) {
         return $('.gallery').append(item);
       });
-      jQuery('.gallery-item').fancybox();
+      jQuery('.gallery-item').fancybox({
+        padding: 0
+      });
       return this;
     };
     $.initProgressBar = function() {
@@ -35,7 +45,7 @@
       });
       return this;
     };
-    return $(window).on('ready', function() {
+    return jQuery(document).on('ready', function() {
       if ($('body').hasClass('post-template')) {
         $.initGallery();
         return $.initProgressBar();
