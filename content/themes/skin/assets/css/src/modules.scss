@@ -12,7 +12,7 @@ body { background: url(../img/background_page.gif); }
 .tag-spectacles a { color: $purple; }
 
 // ## progress
-.progress { position: fixed; top: 0; left: 0; right: 0; height: 8px; background: $cream; z-index: 2; transition: 300ms top linear;
+.progress { position: fixed; top: 0; left: 0; right: 0; height: 8px; background: $cream; z-index: 3; transition: 300ms top linear;
   .tag-bons-plans & { background-color: $brown; }
   .tag-films & { background-color: $blue; }
   .tag-lectures & { background-color: $marine; }
@@ -20,7 +20,7 @@ body { background: url(../img/background_page.gif); }
   .tag-restos & { background-color: $orange; }
   .tag-spectacles & { background-color: $purple; }
 
-  #progressBar div { 
+  #progressBar div {
     background: -moz-linear-gradient(top,  rgba(0,0,0,0.3) 0%, rgba(255,255,255,0) 100%) !important; /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.3)), color-stop(100%,rgba(255,255,255,0))) !important; /* Chrome,Safari4+ */
     background: -webkit-linear-gradient(top,  rgba(0,0,0,0.3) 0%,rgba(255,255,255,0) 100%) !important; /* Chrome10+,Safari5.1+ */
@@ -31,7 +31,7 @@ body { background: url(../img/background_page.gif); }
 
   }
 }
- 
+
 // ## Navigation
 .nav { @include nav; }
 
@@ -39,11 +39,11 @@ body { background: url(../img/background_page.gif); }
 // ### mainNav
 .header { background: url(../img/background_page.gif); z-index: 2; }
 .mainNav { margin: 8px 0 0; padding: 0 0 6px; background: url(../img/hr_sousMenu.gif) 50% 97% no-repeat;
-  text-align: center; 
+  text-align: center;
   .logo { height: auto; transition: width 200ms linear, height 200ms linear; }
   li { @include inline-block; margin: 0; padding: 20px 15px; list-style-type: none; vertical-align: top; transition: padding 200ms linear, font-size 200ms linear;
-    font-size: 1.8em; 
-    
+    font-size: 1.8em;
+
     &:first-child { padding: 3px 15px !important; }
     &.tag-bons-plans a:hover { color: $brown; }
     &.tag-films a:hover { color: $blue; }
@@ -62,14 +62,14 @@ body { background: url(../img/background_page.gif); }
     body.tag-restos &.tag-restos { background: $orange url(../img/activ_shadow.png) 0 100% repeat-x;
       a { color: $white; }}
     body.tag-spectacles &.tag-spectacles { background: $purple url(../img/activ_shadow.png) 0 100% repeat-x;
-      a { color: $white; }} 
-  } 
+      a { color: $white; }}
+  }
 
 
   h1 { display: inline; margin: 0; padding: 0; }
   a { font-size: 1.15em; font-weight: bold; color: $grey; text-transform: uppercase; text-decoration: none; }
 }
-.fixedNav .header { position: fixed; top: 0; left: 0; right: 0; 
+.fixedNav .header { position: fixed; top: 0; left: 0; right: 0;
   .mainNav { background-repeat: repeat-x; }
   li { padding: 9px 14px; font-size: 1.4em; }
   .logo { height: 30px; }
@@ -81,9 +81,9 @@ body { background: url(../img/background_page.gif); }
   h2 { margin: 0;
     font-size: 3em; color: $black; text-transform: uppercase; }
   p, li, td, blockquote { text-align: justify; }
-  .test4u { display: block; 
+  .test4u { display: block;
     font-size: 0.65em; line-height: 1em;
-    
+
     .tag-bons-plans & { color: $brown; }
     .tag-films & { color: $blue; }
     .tag-lectures & { color: $marine; }
@@ -114,41 +114,51 @@ body { background: url(../img/background_page.gif); }
   }
 
   a {
-    .tag-bons-plans & { color: $brown; }
-    .tag-films & { color: $blue; }
-    .tag-lectures & { color: $marine; }
-    .tag-pro & { color: $red; }
-    .tag-restos & { color: $orange; }
-    .tag-spectacles & { color: $purple; }
+    .tag-bons-plans & { color: $brown; border-color: $brown; }
+    .tag-films & { color: $blue; border-color: $blue; }
+    .tag-lectures & { color: $marine; border-color: $marine; }
+    .tag-pro & { color: $red; border-color: $red; }
+    .tag-restos & { color: $orange; border-color: $orange; }
+    .tag-spectacles & { color: $purple; border-color: $purple; }
   }
   .tags { font-size: 0.6em; }
 
-  .post-footer { margin: 0 -50px -50px; padding: 50px; background-color: $grey2; border-top: 2px dashed $white; border-bottom: 2px dashed $grey3; 
+  .caption { display: block; margin: -45px -6.9444444% 20px;
+    text-align: center; }
+  .caption-text { @include inline-block; padding: 2px 20px; background: rgba(0,0,0,.8); @include border-radius(5px); text-shadow: 0 1px 2px #222;
+    color: $white; font-size: .8em; font-weight: $regular; white-space: nowrap; }
+
+
+  .post-footer { margin: 0 -50px -50px; padding: 50px; background-color: $grey2; border-top: 2px dashed $white; border-bottom: 2px dashed $grey3;
     color: $white;
   }
 }
+
+// ## post-template
+.post-template .post-content a { border-bottom-width: 1px; border-bottom-style: dashed;
+  &:hover { text-decoration: none; border-bottom-width: 0; }}
 
 // ## Tag
 .home-template, .tag-template, .archive-template, .author-template {
   .post { padding: 20px 25px; }
   .cover { @include inline-block; margin-right: 25px; vertical-align: middle; }
-  .post-content { @include inline-block; width: 505px; vertical-align: middle; 
-    p { margin: 5px 0; 
+  .post-content { @include inline-block; width: 505px; vertical-align: middle;
+    p { margin: 5px 0;
       font-size: 1.6em; }
     .tags { font-size: .7em; }
     p:last-child { margin-bottom: 0; }
   }
 }
 
-.tag-head { margin: 40px auto; padding: 0 25px; width: $sliceWidth; max-width: 100%; background: white; border-top: 2px dashed $grey3; border-bottom: 2px dashed $grey3; 
-  text-align: center; 
+.tag-head { margin: 40px auto; padding: 0 25px; width: $sliceWidth; max-width: 100%; background: white; border-top: 2px dashed $grey3; border-bottom: 2px dashed $grey3;
+  text-align: center;
   h2 { margin: 15px 0; }}
-.pagination { margin: 40px auto; padding: 15px 25px; width: $sliceWidth; max-width: 100%; background: white; border-top: 2px dashed $grey3; border-bottom: 2px dashed $grey3; 
+.pagination { margin: 40px auto; padding: 15px 25px; width: $sliceWidth; max-width: 100%; background: white; border-top: 2px dashed $grey3; border-bottom: 2px dashed $grey3;
   font-size: 1.6em; text-align: center; }
 
 
 // ## Aside
-.asideBar { position: fixed; top: 121px; right: 0; 
+.asideBar { position: fixed; top: 121px; right: 0;
   > ul, > ul > li { display: inline; margin: 0; padding: 0; }
   > ul > li { position: relative; font-size: 2em; line-height: 2em; }
   > ul > li:hover .item { opacity: .9; }
@@ -163,9 +173,9 @@ body { background: url(../img/background_page.gif); }
 
     .header { margin: 0; padding: 0 0 10px; border-bottom: 1px solid $grey2;
       font-size: .9em; line-height: 1.2em; font-weight: $bold; }
-    ul { margin: 10px 0 0; padding: 0; }  
-    li { margin: 5px 0; padding: 0; }  
-    li { display: block; white-space: nowrap; 
+    ul { margin: 10px 0 0; padding: 0; }
+    li { margin: 5px 0; padding: 0; }
+    li { display: block; white-space: nowrap;
       font-size: .8em; }
     a { color: $white; text-decoration: none; }
     a:hover { text-decoration: underline; }
@@ -184,4 +194,11 @@ body { background: url(../img/background_page.gif); }
     .weight-medium { font-size: 1.2em; font-weight: $medium; }
     .weight-bold { font-size: 1.25em; font-weight: $bold; }
   }
+}
+
+// # fancybox
+.fancybox-opened {
+  .fancybox-title { margin-bottom: -13px; }
+  .fancybox-title-float-wrap .child { @include border-radius(5px);
+    font-weight: $regular; }
 }

@@ -18,42 +18,28 @@
       });
       return this;
     };
-    $.initFootNotes = function() {
-      $('.post p').each(function() {
-        var newText, pattern, text;
-        text = $(this).html();
-        pattern = /\[\^([0-9])*\]:(.*)/g;
-        if (text.match(pattern) !== null) {
-          newText = text.replace(pattern, '<span id="fnref-$1">$2<a href="#fn-$1">↩</a></span>');
-          return $(this).html(newText).wrap($('<li/>').addClass('footnote'));
-        }
-      });
-      $('.footnote').wrapAll($('<ol/>').addClass('footnotes'));
-      $('.post').find('h1, h2, h3, h4, h5, h6, p, li, td, blockquote, pre').each(function() {
-        var newText, pattern, text;
-        text = $(this).html();
-        pattern = /\[\^([0-9])*\]/g;
-        if (text.match(pattern) !== null) {
-          newText = text.replace(pattern, '<sup><a id="fn-$1" href="#fnref-1">$1</a></sup>');
-          return $(this).html(newText);
-        }
-      });
-      return this;
-    };
     $.initSmoothScrollOnAnchor = function() {
       $('a[href^=#]').on('click', function(e) {
         e.preventDefault();
         return $('html,body').animate({
-          scrollTop: $($(e.target).attr('href')).offset().top
+          scrollTop: $(document.getElementById($(e.target).attr('href').replace('#', ''))).offset().top - 70
         }, 500);
+      });
+      return this;
+    };
+    $.initCaption = function() {
+      $('p img').each(function() {
+        if ($(this).attr('alt') !== '') {
+          return $('<span/>').addClass('caption').html($('<span/>').addClass('caption-text').html($(this).attr('alt'))).insertAfter($(this));
+        }
       });
       return this;
     };
     return $(window).ready(function() {
       $.initFixNav();
       $.initTargetBlank();
-      $.initFootNotes();
       $.initSmoothScrollOnAnchor();
+      $.initCaption();
       $(".no-touch img.hover").hoverSrc();
       if (!Modernizr.input.placeholder) {
         return $("input").each(function() {

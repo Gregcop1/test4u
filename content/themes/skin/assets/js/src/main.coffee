@@ -18,33 +18,21 @@ $ ->
     )
     return @
 
-  $.initFootNotes = ()->
-    # replace definition markers
-    $('.post p').each(()->
-      text = $(this).html()
-      pattern = /\[\^([0-9])*\]:(.*)/g
-      if text.match(pattern) != null
-        newText = text.replace(pattern, '<span id="fnref-$1">$2<a href="#fn-$1">↩</a></span>')
-        $(this).html(newText)
-          .wrap($('<li/>').addClass('footnote'))
-    )
-    $('.footnote').wrapAll($('<ol/>').addClass('footnotes'))
-
-    # replace reference
-    $('.post').find('h1, h2, h3, h4, h5, h6, p, li, td, blockquote, pre').each(()->
-      text = $(this).html()
-      pattern = /\[\^([0-9])*\]/g
-      if text.match(pattern) != null
-        newText = text.replace(pattern, '<sup><a id="fn-$1" href="#fnref-1">$1</a></sup>')
-        $(this).html(newText)
+  $.initSmoothScrollOnAnchor = ()->
+    $('a[href^=#]').on('click', (e)->     
+      e.preventDefault()
+      $('html,body').animate({scrollTop: ($( document.getElementById($(e.target).attr( 'href').replace('#','')) ).offset().top - 70) }, 500)
     )
 
     return @
 
-  $.initSmoothScrollOnAnchor = ()->
-    $('a[href^=#]').on('click', (e)->     
-      e.preventDefault()
-      $('html,body').animate({scrollTop:$( $(e.target).attr( 'href') ).offset().top}, 500)
+  $.initCaption = ()->
+    $('p img').each(()->
+      if $(this).attr('alt') != ''
+        $('<span/>').addClass('caption')
+          .html($('<span/>').addClass('caption-text')
+            .html($(this).attr('alt')))
+          .insertAfter($(this))
     )
 
     return @
@@ -52,8 +40,8 @@ $ ->
   $(window).ready ->
     $.initFixNav()
     $.initTargetBlank()
-    $.initFootNotes()
     $.initSmoothScrollOnAnchor()
+    $.initCaption()
 
     # Handle src update on hover event
     $(".no-touch img.hover").hoverSrc()
