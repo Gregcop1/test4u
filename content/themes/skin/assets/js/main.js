@@ -12,17 +12,19 @@
     };
     $.initTargetBlank = function() {
       $('a[href^="http"]').each(function() {
-        if (!$(this).attr('href').match(/http:\/\/test4u/)) {
+        if (!$(this).attr('href').match(/http:\/\/www\.test4u/)) {
           return $(this).attr('target', '_blank');
         }
       });
       return this;
     };
     $.initSmoothScrollOnAnchor = function() {
-      $('a[href^=#]').on('click', function(e) {
+      $('a[href*=#]').on('click', function(e) {
+        var $target;
         e.preventDefault();
+        $target = $(e.target).closest('a');
         return $('html,body').animate({
-          scrollTop: $(document.getElementById($(e.target).attr('href').replace('#', ''))).offset().top - 70
+          scrollTop: $(document.getElementById($target.attr('href').replace('#', ''))).offset().top - 70
         }, 500);
       });
       return this;

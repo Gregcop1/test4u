@@ -13,15 +13,16 @@ $ ->
 
   $.initTargetBlank = ()->
     $('a[href^="http"]').each(->
-      if !$(this).attr('href').match(/http:\/\/test4u/)
+      if !$(this).attr('href').match(/http:\/\/www\.test4u/)
         $(this).attr('target', '_blank')
     )
     return @
 
   $.initSmoothScrollOnAnchor = ()->
-    $('a[href^=#]').on('click', (e)->     
+    $('a[href*=#]').on('click', (e)->
       e.preventDefault()
-      $('html,body').animate({scrollTop: ($( document.getElementById($(e.target).attr( 'href').replace('#','')) ).offset().top - 70) }, 500)
+      $target = $(e.target).closest('a')
+      $('html,body').animate({scrollTop: ($( document.getElementById($target.attr( 'href').replace('#','')) ).offset().top - 70) }, 500)
     )
 
     return @

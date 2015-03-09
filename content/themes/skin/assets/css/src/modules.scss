@@ -98,13 +98,14 @@ body { background: url(../img/background_page.gif); }
   .post-content {
     img, iframe { margin: 20px -6.9444444%; width: 113.88889%; height: auto; }
     iframe { height: 460px;  }
-    .gallery { margin: 40px -6.9444444%; text-align: center; }
+    .gallery { margin: 40px -7% 40px -6.8%; text-align: center; }
     .gallery img { margin: 0; width: auto; }
     .gallery-item { @include inline-block; margin: -3px 0 0 -1px; width: 19.928%; height: 164px; background-repeat: no-repeat; background-position: 50% 50%; background-size: cover; opacity: .8; transition: opacity 300ms ease-in-out; border: 1px solid white; }
-    .w-5 { width: 19.928%; height: 164px; }
-    .w-4 { width: 24.92%; height: 206px; }
-    .w-3 { width: 33.26%; height: 274px; }
-    .gallery-item:hover { opacity: 1; }
+    .w-5 { width: 19.9%; height: 165px; }
+    .w-4 { width: 24.9%; height: 205px; }
+    .w-3 { width: 33.23%; height: 274px; }
+    .gallery-item:hover { opacity: 1; border: 1px solid white; }
+    .gallery-item:focus { outline: 0; }
 
     blockquote { margin: 20px 0; padding: 0 0 0 20px; border-left: 5px solid $grey3; }
 
@@ -165,14 +166,26 @@ body { background: url(../img/background_page.gif); }
   .tableOfContents, .tagsCloud {
     &:hover .item { opacity: .9; border-color: rgba($grey, .9); }
   }
+
+  .commentsCount { display: none; }
+  .post-template & .commentsCount { display: inline; }
+
+  // ### comments count
+  .commentsCount a { display: block; padding: 18px 0; width: 51px; height: 15px; background: url(../img/commentsCount.jpg) 50% 50% no-repeat; opacity: 0.9; overflow: hidden;
+    font-size: 0.65em; line-height: 1; color: $white; white-space: nowrap; text-decoration: none; text-align: center;
+    .ct-label { display: none; }
+    &:hover { opacity: 1; }
+  }
+
   .item { position: relative; display: block; width: 50px; height: 50px; border-left: 1px solid $white; z-index: 10; transition: 500ms opacity linear;
     text-align: center; }
 
-  .panel { position: absolute; top: -50px; right: -500px; padding: 20px; min-width: 300px; max-width: 350px; background-color: $grey; opacity: .98; z-index: 9; transition: 500ms right ease;
+
+  .panel { position: absolute; top: -50px; right: -500px; padding: 20px; min-width: 300px; max-width: 350px; background-color: $grey4; opacity: .98; z-index: 9; transition: 500ms right ease;
     color: $white;
 
-    .header { margin: 0; padding: 0 0 10px; border-bottom: 1px solid $grey2;
-      font-size: .9em; line-height: 1.2em; font-weight: $bold; }
+    .header { position: static; margin: 0; padding: 0 0 10px; background: none; border-bottom: 1px solid $grey2;
+      font-size: .9em; line-height: 1.2em; font-weight: $bold; color: $white; }
     ul { margin: 10px 0 0; padding: 0; }
     li { margin: 5px 0; padding: 0; }
     li { display: block; white-space: nowrap;
