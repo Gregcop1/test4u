@@ -1,8 +1,0 @@
-// # mediaqueries: responsive behavior
-
-// 960px is the vertical iPad width, you should edit it to match the wanted layout breakpoint
-@media screen and (max-width: 960px) {
-  .page { padding: 0; width: 85%; }  
-  .column { display: block; width: auto!important; margin: 0!important; }
-  img { max-width: 100%; height: auto; }
-}

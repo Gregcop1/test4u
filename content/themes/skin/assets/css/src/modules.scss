@@ -1,8 +1,9 @@
 // # modules: the site elements
 body { background: url(../img/background_page.gif); }
 
-// Use class `page` to set the max-width of the website
-.page { @include page; padding: 0 120px; }
+@media screen and (max-width: 500px) {
+  main.content { margin-right: 51px;  }
+}
 
 .tag-bons-plans a { color: $brown; }
 .tag-films a { color: $blue; }
@@ -114,6 +115,7 @@ body { background: url(../img/background_page.gif); }
     pre > code { overflow: auto; max-height: 1000px; white-space: pre-wrap; }
   }
 
+
   a {
     .tag-bons-plans & { color: $brown; border-color: $brown; }
     .tag-films & { color: $blue; border-color: $blue; }
@@ -148,6 +150,22 @@ body { background: url(../img/background_page.gif); }
       font-size: 1.6em; }
     .tags { font-size: .7em; }
     p:last-child { margin-bottom: 0; }
+  }
+}
+@media screen and (max-width: 500px) {
+  .home-template, .tag-template, .archive-template, .author-template, .post-template {
+    .post, .pagination { padding: 20px 5%; max-width: 85%;  }
+    .post-content { width: 100%;
+      img, iframe, .gallery { margin-left: -6%; margin-right: -6%; width: 112%; }
+      img { max-width: 10000px; }
+      .gallery .gallery-item { display: block; margin: 0; width: auto; border: 0;  }
+    }
+    .caption { margin: -45px auto 20px; }
+    .caption-text { max-width: 100%; white-space: normal; }
+    .post-footer { margin: 0 -6%; padding: 20px 6%; }
+    .cover { display: block; margin: 0 auto 20px; }
+    h2, .h2-like { text-align: center; }
+    .post-meta { display: none; }
   }
 }
 
@@ -207,6 +225,9 @@ body { background: url(../img/background_page.gif); }
     .weight-medium { font-size: 1.2em; font-weight: $medium; }
     .weight-bold { font-size: 1.25em; font-weight: $bold; }
   }
+}
+@media screen and (max-width: 500px) {
+  .asideBar .panel { padding: 10px; min-width: 243px; }
 }
 
 // # fancybox

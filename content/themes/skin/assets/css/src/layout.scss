@@ -63,5 +63,10 @@ body { color: $grey; }
 .align-right { text-align: right; }
 .align-justify { text-align: justify; }
 
+
+@media screen and (max-width: 960px) {
+  img { max-width: 100%; height: auto; }
+}
+
 // # float reset
 .clear { clear: both; }
