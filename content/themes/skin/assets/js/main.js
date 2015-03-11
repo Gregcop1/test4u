@@ -1,5 +1,6 @@
 (function() {
   $(function() {
+    var $launchResponsiveMenu;
     $.initFixNav = function() {
       window.addEventListener('scroll', function(e) {
         if (window.scrollY) {
@@ -37,7 +38,39 @@
       });
       return this;
     };
-    return $(window).ready(function() {
+    $.initResponsive = function() {
+      var $newMenu;
+      if ($('body').width() <= 801) {
+        $newMenu = $('<ul/>').attr('id', 'responsiveMenu').addClass('responsiveMenu');
+        $('.mainNav li').not(':first').each(function() {
+          return $(this).appendTo($newMenu);
+        });
+        $('body').prepend($newMenu);
+        $('main.content').attr('id', 'responsiveContent').addClass('responsiveContent');
+        $('<button/>').attr('id', 'responsiveButton').addClass('responsiveButton').html('☰').prependTo('body');
+      }
+      return this;
+    };
+    $launchResponsiveMenu = function() {
+      var slideout;
+      if ($('body').width() <= 801) {
+        slideout = new Slideout({
+          'panel': document.getElementById('responsiveContent'),
+          'menu': document.getElementById('responsiveMenu'),
+          'padding': 153,
+          'tolerance': 70
+        });
+        $('#responsiveButton').on('click', (function(_this) {
+          return function(e) {
+            slideout.toggle();
+            return _this;
+          };
+        })(this));
+      }
+      return this;
+    };
+    $(window).ready(function() {
+      $.initResponsive();
       $.initFixNav();
       $.initTargetBlank();
       $.initSmoothScrollOnAnchor();
@@ -50,6 +83,9 @@
           }
         });
       }
+    });
+    return $(window).load(function() {
+      return $launchResponsiveMenu();
 
       /*
       

@@ -38,7 +38,44 @@ $ ->
 
     return @
 
+  $.initResponsive = ()->
+    if $('body').width() <= 801
+      # prepare menu
+      $newMenu = $('<ul/>').attr('id', 'responsiveMenu')
+        .addClass('responsiveMenu')
+      $('.mainNav li').not(':first').each(->
+        $(this).appendTo($newMenu)
+      )
+      $('body').prepend($newMenu)
+
+      # prepare content
+      $('main.content').attr('id', 'responsiveContent')
+        .addClass('responsiveContent')
+
+      # prepare menu button
+      $('<button/>').attr('id', 'responsiveButton')
+        .addClass('responsiveButton')
+        .html('☰')
+        .prependTo('body')
+    return @
+
+  $launchResponsiveMenu = ()->
+    # build slideout
+    if $('body').width() <= 801
+      slideout = new Slideout(
+        'panel': document.getElementById('responsiveContent'),
+        'menu': document.getElementById('responsiveMenu'),
+        'padding': 153,
+        'tolerance': 70
+      )
+
+      $('#responsiveButton').on 'click', (e)=>
+        slideout.toggle()
+        return @
+    return @
+
   $(window).ready ->
+    $.initResponsive()
     $.initFixNav()
     $.initTargetBlank()
     $.initSmoothScrollOnAnchor()
@@ -52,6 +89,8 @@ $ ->
       $("input").each ->
         $(this).placeholder()  unless $(this).attr("placeholder") is ""
 
+  $(window).load ->
+    $launchResponsiveMenu()
 
     ###
 

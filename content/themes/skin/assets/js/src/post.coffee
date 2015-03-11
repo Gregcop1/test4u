@@ -12,10 +12,10 @@ $ ->
     count = $('.gallery img').length
     wClass = 'w-4'
 
-    if count % 3 == 0
-      wClass = 'w-3'
-    else if count % 5 == 0
+    if count % 5 == 0
       wClass = 'w-5'
+    else if count % 3 == 0
+      wClass = 'w-3'
     $a.addClass(wClass)
     $('.gallery img').each(->
       $imgs.push($a.clone()

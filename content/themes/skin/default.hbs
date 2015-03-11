@@ -67,7 +67,8 @@
       </ul>
     </aside>
 
-    {{! The main JavaScript file for Casper }}
+    {{! The main JavaScript file for skin }}
+    <script type="text/javascript" src="{{asset "js/components/slideout.min.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/base.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/main.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/components/tagsCloud.js"}}"></script>
@@ -80,9 +81,6 @@
       ga('create', 'UA-29894162-1', 'auto');
       ga('send', 'pageview');
     </script>
-    <script type='text/javascript'>//<![CDATA[
-    document.write("<script async src='//HOST:2369/browser-sync/browser-sync-client.1.5.8.js'><\/script>".replace(/HOST/g, location.hostname).replace(/PORT/g, location.port));
-    //]]></script>
 
 </body>
 </html>

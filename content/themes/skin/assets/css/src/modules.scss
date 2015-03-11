@@ -1,7 +1,7 @@
 // # modules: the site elements
 body { background: url(../img/background_page.gif); }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 800px) {
   main.content { margin-right: 51px;  }
 }
 
@@ -102,9 +102,9 @@ body { background: url(../img/background_page.gif); }
     .gallery { margin: 40px -7% 40px -6.8%; text-align: center; }
     .gallery img { margin: 0; width: auto; }
     .gallery-item { @include inline-block; margin: -3px 0 0 -1px; width: 19.928%; height: 164px; background-repeat: no-repeat; background-position: 50% 50%; background-size: cover; opacity: .8; transition: opacity 300ms ease-in-out; border: 1px solid white; }
-    .w-5 { width: 19.9%; height: 165px; }
-    .w-4 { width: 24.9%; height: 205px; }
-    .w-3 { width: 33.23%; height: 274px; }
+    .w-5 { width: 19%; height: 157px; }
+    .w-4 { width: 24%; height: 198px; }
+    .w-3 { width: 32.23%; height: 266px; }
     .gallery-item:hover { opacity: 1; border: 1px solid white; }
     .gallery-item:focus { outline: 0; }
 
@@ -152,10 +152,19 @@ body { background: url(../img/background_page.gif); }
     p:last-child { margin-bottom: 0; }
   }
 }
-@media screen and (max-width: 500px) {
+
+.tag-head { margin: 40px auto 0; padding: 0 25px; width: $sliceWidth; max-width: 100%; background: white; border-top: 2px dashed $grey3; border-bottom: 2px dashed $grey3;
+  text-align: center;
+  & + .post { margin-top: 0; }
+  h2 { margin: 15px 0; }}
+.pagination { margin: 40px auto; padding: 15px 25px; width: $sliceWidth; max-width: 100%; background: white; border-top: 2px dashed $grey3; border-bottom: 2px dashed $grey3;
+  font-size: 1.6em; text-align: center; }
+
+@media screen and (max-width: 800px) {
   .home-template, .tag-template, .archive-template, .author-template, .post-template {
     .post, .pagination { padding: 20px 5%; max-width: 85%;  }
-    .post-content { width: 100%;
+    .tag-head { padding: 5px 5%; max-width: 85%;  }
+    .post-content { width: 390px;
       img, iframe, .gallery { margin-left: -6%; margin-right: -6%; width: 112%; }
       img { max-width: 10000px; }
       .gallery .gallery-item { display: block; margin: 0; width: auto; border: 0;  }
@@ -163,21 +172,20 @@ body { background: url(../img/background_page.gif); }
     .caption { margin: -45px auto 20px; }
     .caption-text { max-width: 100%; white-space: normal; }
     .post-footer { margin: 0 -6%; padding: 20px 6%; }
-    .cover { display: block; margin: 0 auto 20px; }
-    h2, .h2-like { text-align: center; }
-    .post-meta { display: none; }
   }
 }
 
-.tag-head { margin: 40px auto; padding: 0 25px; width: $sliceWidth; max-width: 100%; background: white; border-top: 2px dashed $grey3; border-bottom: 2px dashed $grey3;
-  text-align: center;
-  h2 { margin: 15px 0; }}
-.pagination { margin: 40px auto; padding: 15px 25px; width: $sliceWidth; max-width: 100%; background: white; border-top: 2px dashed $grey3; border-bottom: 2px dashed $grey3;
-  font-size: 1.6em; text-align: center; }
-
+@media screen and (max-width: 600px) {
+  .home-template, .tag-template, .archive-template, .author-template, .post-template {
+    .cover { display: block; margin: 0 auto 20px; }
+    h2, .h2-like { text-align: center; }
+    .post-meta { display: none; }
+    .post-content { width: 100%; }
+  }
+}
 
 // ## Aside
-.asideBar { position: fixed; top: 121px; right: 0;
+.asideBar { position: fixed; top: 123px; right: 0; z-index: 2;
   > ul, > ul > li { display: inline; margin: 0; padding: 0; }
   > ul > li { position: relative; font-size: 2em; line-height: 2em; }
   > ul > li:hover .item { opacity: .9; }
@@ -226,7 +234,7 @@ body { background: url(../img/background_page.gif); }
     .weight-bold { font-size: 1.25em; font-weight: $bold; }
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .asideBar .panel { padding: 10px; min-width: 243px; }
 }
 
@@ -236,3 +244,35 @@ body { background: url(../img/background_page.gif); }
   .fancybox-title-float-wrap .child { @include border-radius(5px);
     font-weight: $regular; }
 }
+
+// # responsive menu
+.responsiveMenu { display: none; }
+.responsiveButton { position: fixed; left: 20px; top: 20px; z-index: 10; transition: top 100ms linear;
+  font-size: 3em; color: $black; border: 0;
+  &:hover { text-decoration: none; }
+  .fixedNav & { top: 7px; }
+}
+.slideout-menu { position: fixed; left: 0; top: 130px; bottom: 0; right: 0; margin: 0; padding: 0; width: 159px; z-index: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; display: none;
+  li { margin: 0; text-align: right; }
+
+  a { display: block; padding: 10px 20px; color: $black;
+    &:hover { text-decoration: none; }
+  }
+  .tag-bons-plans > a:hover { color: $brown; }
+  .tag-films > a:hover { color: $blue; }
+  .tag-lectures > a:hover { color: $marine; }
+  .tag-restos > a:hover { color: $orange; }
+  .tag-pro > a:hover { color: $red; }
+  .tag-spectacles > a:hover { color: $purple; }
+  body.tag-bons-plans & .tag-bons-plans a { background-color: $brown; color: $white; }
+  body.tag-films & .tag-films a { background-color: $blue; color: $white; }
+  body.tag-lectures & .tag-lectures a { background-color: $marine; color: $white; }
+  body.tag-restos & .tag-restos a { background-color: $orange; color: $white; }
+  body.tag-pro & .tag-pro a { background-color: $red; color: $white; }
+  body.tag-spectacles & .tag-spectacles a { background-color: $purple; color: $white; }
+}
+.slideout-panel { position:relative; z-index: 1; }
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel { overflow: hidden; }
+.slideout-open .slideout-menu { display: block; }
