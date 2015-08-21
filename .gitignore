@@ -2,6 +2,12 @@
 logs
 *.log
 
+# PHPStorm
+.idea
+
+# Twgit
+.twgit_features_subject
+
 # Runtime data
 pids
 *.pid
